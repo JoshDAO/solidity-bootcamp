@@ -16,12 +16,50 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "_newSupply",
+						"name": "",
 						"type": "uint256"
 					}
 				],
 				"name": "NewSupply",
 				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -41,6 +79,53 @@
 				"name": "increaseTotalSupply",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "userPayments",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -72,11 +157,11 @@
 	},
 	"sources": {
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0x01d04b43484637e6eb44169e127c012a29cd42905997919a3f88a2d541fbd8d3",
+			"keccak256": "0x5753c16148fb6a87094daefba5b914c4741e23537edf2728cd9b6f987d4960b2",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://8d5001a828582c7bf56b6b87e19e9b06d1b39507dcfc86821c87698875232edc",
-				"dweb:/ipfs/QmQmaPz3YcbLdMa3rJvA3RE8tEyxAan5NbGn7uc5TUVD8U"
+				"bzz-raw://db9c0dfb63504e5fe0810e6c82f30c9a7a11ce25e84af055262238ad298c5597",
+				"dweb:/ipfs/QmehGGiEccGbcjPDVj8v1LZvBSYw1wRTETCUTk6AsPTiFp"
 			]
 		}
 	},
