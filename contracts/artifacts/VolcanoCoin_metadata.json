@@ -11,6 +11,19 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_newSupply",
+						"type": "uint256"
+					}
+				],
+				"name": "NewSupply",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "getTotalSupply",
 				"outputs": [
@@ -59,11 +72,11 @@
 	},
 	"sources": {
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0x8cc53bd87ec091758691196276eac57d384ba7913b28a16b69d65add7c5daf8d",
+			"keccak256": "0x01d04b43484637e6eb44169e127c012a29cd42905997919a3f88a2d541fbd8d3",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://dbded63eb9a6353815a6193c0ba593176229fbbd545bd80490ba6643d833ef10",
-				"dweb:/ipfs/QmdrgFA2G7RguCEApxkN9XQxLEurjMraKwn9ExURsskAk7"
+				"bzz-raw://8d5001a828582c7bf56b6b87e19e9b06d1b39507dcfc86821c87698875232edc",
+				"dweb:/ipfs/QmQmaPz3YcbLdMa3rJvA3RE8tEyxAan5NbGn7uc5TUVD8U"
 			]
 		}
 	},

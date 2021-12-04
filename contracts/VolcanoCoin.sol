@@ -10,6 +10,8 @@ contract VolcanoCoin {
         owner = msg.sender;
     }
 
+    event NewSupply(uint _newSupply);
+
     modifier onlyOwner() {
         require(msg.sender == owner);
         _;
@@ -21,6 +23,7 @@ contract VolcanoCoin {
 
     function increaseTotalSupply() public onlyOwner {
         totalSupply += 1000;
+        emit NewSupply(totalSupply);
     }
 
 
