@@ -2,11 +2,12 @@
 
 pragma solidity ^0.8.0;
 
-contract VolcanoCoin {
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-    uint totalSupply = 10000;
-    address owner;
-    mapping(address => uint) public balance;
+contract VolcanoCoin is ERC20("Volcano Coin", "VLC" ), Ownable {
+
+    uint initialSupply = 10000;
     mapping(address => Payment[]) public userPayments;
 
     struct Payment {
@@ -15,40 +16,30 @@ contract VolcanoCoin {
     }
 
     constructor() {
-        owner = msg.sender;
-        balance[owner] = totalSupply;
+        _mint(msg.sender, initialSupply);
     }
-
     event NewSupply(uint);
     event Transfer(address indexed, uint);
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "You must be the owner.");
-        _;
+    function increaseTotalSupply(uint _quantity) public onlyOwner {
+        _mint(msg.sender, _quantity);
+        emit NewSupply(_quantity);
     }
-
-    function getTotalSupply() public view returns ( uint) {
-        return totalSupply;
+    function transfer(address _recipient, uint _amount) public virtual override returns(bool) {
+        _transfer;
+        updatePaymentRecord(_recipient, msg.sender, _amount);
+        return true;
     }
-
-    function increaseTotalSupply() public onlyOwner {
-        totalSupply += 1000;
-        emit NewSupply(totalSupply);
-    }
-
-    function transfer(address _recipient, uint _amount) public {
-        require(balance[msg.sender] >= _amount, "You do not have sufficient funds.");
-        require(_amount > 0, "amount must be greater than 0");
-        balance[msg.sender] -= _amount;
-        balance[_recipient] += _amount;
+    function updatePaymentRecord(address _recipient, address _sender, uint _amount) private{
         Payment memory newPayment;
         newPayment.amount = _amount;
         newPayment.recipient = _recipient;
-        userPayments[msg.sender].push(newPayment);
-
-        emit Transfer(_recipient, _amount);
+        userPayments[_sender].push(newPayment);
     }
 
+    function getPayments(address _user) public view returns (Payment[] memory) {
+        return userPayments[_user];
+    }
 
 
 }
