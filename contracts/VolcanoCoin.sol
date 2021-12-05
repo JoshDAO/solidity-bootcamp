@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract VolcanoCoin is ERC20("Volcano Coin", "VLC" ), Ownable {
 
-    uint initialSupply = 10000;
+    uint initialSupply = 10000e18;
     mapping(address => Payment[]) public userPayments;
 
     struct Payment {
@@ -26,7 +26,7 @@ contract VolcanoCoin is ERC20("Volcano Coin", "VLC" ), Ownable {
         emit NewSupply(_quantity);
     }
     function transfer(address _recipient, uint _amount) public virtual override returns(bool) {
-        _transfer;
+        _transfer(msg.sender, _recipient, _amount);
         updatePaymentRecord(_recipient, msg.sender, _amount);
         return true;
     }

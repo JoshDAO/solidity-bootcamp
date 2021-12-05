@@ -546,11 +546,11 @@
 			]
 		},
 		"contracts/VolcanoCoin.sol": {
-			"keccak256": "0xc8ad3fb36e5b7daabee6ae7af2d03414dbe8c319acb70cb4e3aaf7204d9c9461",
+			"keccak256": "0x11dab821d0817dbf836d90ab9a661b7eab63953f35fe4dc94709e80f238b6f26",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://181c72c1f372d801db83b5b8ece7dfd649bb1cb6e4a8b5697e8a628d93022dec",
-				"dweb:/ipfs/QmUPMosFuTDyzygpjMJWzmYTGtrLXSmNuqt1Mrxc7rBNuY"
+				"bzz-raw://764d972d71b7ae7b06e7c32a536568cda93bce24adb51c11e6e9e7fd97f51afb",
+				"dweb:/ipfs/QmVsH95EmscUKNn7vs7ZJtQTUNe7PG3pszVQqb1tqS3PtW"
 			]
 		}
 	},
